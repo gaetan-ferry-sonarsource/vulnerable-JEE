@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE address [<!ENTITY entity SYSTEM "http://localhost:6090/entity/remote-entity">]>
+<address>
+    <name>John Johnson</name>
+    <company>SonarSource</company>
+    <phone>(011) 123-4567</phone>
+    <file>&entity;</file>
+</address>
