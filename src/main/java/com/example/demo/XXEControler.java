@@ -26,21 +26,15 @@ public class XXEControler {
     }
 
     @GetMapping("/XMLReader")
-    public String xmlreaderadapterCompliant() throws IOException {
+    public String xmlreaderadapterCompliant() throws IOException, SAXException, ParserConfigurationException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         XMLReader reader = null;
-        try {
-            reader = factory.newSAXParser().getXMLReader();
-        } catch (SAXException | ParserConfigurationException e) {
-            e.printStackTrace();
-        }
+        reader = factory.newSAXParser().getXMLReader();
+
         var resourceLoader = new DefaultResourceLoader();
         Resource resource = resourceLoader.getResource("with-system-entity.xml");
-        try {
-            reader.parse(resource.getURI().toString());
-        } catch (SAXException e) {
-            return "Parsing failed: " + e;
-        }
+        reader.parse(resource.getURI().toString());
+
         return "External entity was accessed.";
     }
 }
