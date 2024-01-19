@@ -33,7 +33,7 @@ public class XXEControler {
 
         var resourceLoader = new DefaultResourceLoader();
         Resource resource = resourceLoader.getResource("with-system-entity.xml");
-        reader.parse(resource.getURI().toString());
+        //reader.parse(resource.getURI().toString());
 
         return "External entity was accessed.";
     }
